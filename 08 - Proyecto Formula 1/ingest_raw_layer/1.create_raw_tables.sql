@@ -20,11 +20,7 @@ CREATE TABLE IF NOT EXISTS f1_raw.circuits(
   url STRING
 )
 USING csv
-OPTIONS (path "/FileStore/dataset/apache-spark-formula1/raw/circuits.csv", header true);
-
--- COMMAND ----------
-
-SELECT * FROM f1_raw.circuits
+OPTIONS (path "/mnt/sa70903775222/raw/circuits.csv", header true);
 
 -- COMMAND ----------
 
@@ -44,12 +40,7 @@ CREATE TABLE IF NOT EXISTS f1_raw.races(
   url STRING
 )
 USING csv
-OPTIONS (path "/FileStore/dataset/apache-spark-formula1/raw/races.csv", header true, delimiter ',');
-
--- COMMAND ----------
-
-SELECT * FROM f1_raw.races
-
+OPTIONS (path "/mnt/sa70903775222/raw/races.csv", header true, delimiter ',');
 
 -- COMMAND ----------
 
@@ -66,11 +57,7 @@ nationality STRING,
 url STRING
 )
 USING json
-OPTIONS (path "/FileStore/dataset/apache-spark-formula1/raw/constructors.json");
-
--- COMMAND ----------
-
-SELECT * FROM f1_raw.constructors;
+OPTIONS (path "/mnt/sa70903775222/raw/constructors.json");
 
 -- COMMAND ----------
 
@@ -86,11 +73,7 @@ nationality STRING,
 url STRING
 )
 USING json
-OPTIONS (path "/FileStore/dataset/apache-spark-formula1/raw/drivers.json");
-
--- COMMAND ----------
-
-SELECT *FROM f1_raw.drivers;
+OPTIONS (path "/mnt/sa70903775222/raw/drivers.json");
 
 -- COMMAND ----------
 
@@ -119,11 +102,7 @@ CREATE TABLE IF NOT EXISTS f1_raw.qualifying(
  q3 STRING
 )
 USING json
-OPTIONS (path "/FileStore/dataset/apache-spark-formula1/raw/qualifying");
-
--- COMMAND ----------
-
-SELECT * FROM f1_raw.qualifying
+OPTIONS (path "/mnt/sa70903775222/raw/qualifying");
 
 -- COMMAND ----------
 
@@ -141,16 +120,12 @@ time STRING,
 milliseconds INT
 )
 USING csv
-OPTIONS (path "/FileStore/dataset/apache-spark-formula1/raw/lap_times");
-
--- COMMAND ----------
-
-SELECT * FROM f1_raw.lapTimes
+OPTIONS (path "/mnt/sa70903775222/raw/lap_times");
 
 -- COMMAND ----------
 
 CREATE DATABASE IF NOT EXISTS f1_processed
-LOCATION "/FileStore/dataset/apache-spark-formula1/processed"
+LOCATION "/mnt/sa70903775222/processed"
 
 -- COMMAND ----------
 
